@@ -1,0 +1,33 @@
+# Repository Map (Top 3 files, 20%)
+
+
+## api.py (importance: 1.138)
+⋮...
+│def request(method, url, **kwargs):
+│def get(url, params = None, **kwargs):
+│def options(url, **kwargs):
+│def head(url, **kwargs):
+│def post(url, data = None, json = None, **kwargs):
+│def put(url, data = None, **kwargs):
+│def patch(url, data = None, **kwargs):
+│def delete(url, **kwargs):
+
+## help.py (importance: 1.000)
+⋮...
+│def _implementation():
+│def info():
+│def main():
+
+## utils.py (importance: 1.000)
+⋮...
+│def proxy_bypass_registry(host):
+│def proxy_bypass(host):
+│def dict_to_sequence(d):
+│def super_len(o):
+│def get_netrc_auth(url, raise_errors = False):
+│def guess_filename(obj):
+│def extract_zipped_paths(path):
+│@contextlib.contextmanager def atomic_open(filename):
+│def from_key_val_list(value):
+│def to_key_val_list(value):
+⋮... and 32 more symbols
