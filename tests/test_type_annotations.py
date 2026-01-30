@@ -4,7 +4,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from code_compass.parsers import PythonParser
+from ai_code_compass.parsers import PythonParser
 
 
 def test_python310_union_syntax():

@@ -3,11 +3,11 @@
 import hashlib
 from pathlib import Path
 from typing import Optional
-from code_compass.models import FileInfo, RepoMap
-from code_compass.parsers import PythonParser
-from code_compass.cache import CacheManager
-from code_compass.graph import DependencyBuilder
-from code_compass.formatter import RepoMapFormatter, SymbolFormatter
+from ai_code_compass.models import FileInfo, RepoMap
+from ai_code_compass.parsers import PythonParser
+from ai_code_compass.cache import CacheManager
+from ai_code_compass.graph import DependencyBuilder
+from ai_code_compass.formatter import RepoMapFormatter, SymbolFormatter
 
 
 class MapGenerator:

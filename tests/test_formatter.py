@@ -1,7 +1,7 @@
 """Tests for formatter module."""
 
-from code_compass.models import Symbol, RepoMap, SymbolType
-from code_compass.formatter import SymbolFormatter, RepoMapFormatter
+from ai_code_compass.models import Symbol, RepoMap, SymbolType
+from ai_code_compass.formatter import SymbolFormatter, RepoMapFormatter
 
 
 def test_symbol_to_map_line():

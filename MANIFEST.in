@@ -1,0 +1,25 @@
+include README.md
+include LICENSE
+include pyproject.toml
+include CONTRIBUTING.md
+
+# Exclude development and test files
+exclude .gitignore
+exclude run_all_tests.sh
+recursive-exclude tests *
+recursive-exclude scripts *
+recursive-exclude .github *
+
+# Exclude documentation that's not needed in the package
+exclude FIXES_SUMMARY.md
+exclude MVP_DELIVERY_REPORT.md
+exclude EMPIRICAL_VALIDATION_REPORT.md
+exclude FINAL_VALIDATION_REPORT.md
+exclude GITHUB_SETUP_GUIDE.md
+exclude REPO_IMPROVEMENTS_SUMMARY.md
+
+# Exclude build artifacts
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude *.so
+global-exclude .DS_Store

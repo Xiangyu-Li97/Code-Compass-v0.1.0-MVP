@@ -3,9 +3,9 @@
 import os
 import time
 from pathlib import Path
-from code_compass.parsers import PythonParser
-from code_compass.graph import DependencyBuilder
-from code_compass.formatter import RepoMapFormatter, SymbolFormatter
+from ai_code_compass.parsers import PythonParser
+from ai_code_compass.graph import DependencyBuilder
+from ai_code_compass.formatter import RepoMapFormatter, SymbolFormatter
 
 
 def count_tokens_rough(text: str) -> int:

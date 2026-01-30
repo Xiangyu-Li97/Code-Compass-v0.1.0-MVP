@@ -4,11 +4,12 @@ import sys
 import time
 import click
 from pathlib import Path
-from code_compass.map_generator import MapGenerator
+from ai_code_compass.map_generator import MapGenerator
+from ai_code_compass import __version__
 
 
 @click.group()
-@click.version_option(version="0.1.0")
+@click.version_option(version=__version__, prog_name="code-compass")
 def cli():
     """Code Compass - Fast code map generator for AI coding assistants."""
     pass

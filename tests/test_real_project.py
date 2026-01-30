@@ -3,9 +3,9 @@
 import tempfile
 from pathlib import Path
 
-from code_compass.parsers import PythonParser
-from code_compass.cache import CacheManager
-from code_compass.graph import DependencyBuilder
+from ai_code_compass.parsers import PythonParser
+from ai_code_compass.cache import CacheManager
+from ai_code_compass.graph import DependencyBuilder
 
 
 def test_parse_code_compass():

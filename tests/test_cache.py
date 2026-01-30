@@ -3,8 +3,8 @@
 import tempfile
 from pathlib import Path
 
-from code_compass.cache import CacheManager
-from code_compass.models import FileInfo, Symbol, SymbolType
+from ai_code_compass.cache import CacheManager
+from ai_code_compass.models import FileInfo, Symbol, SymbolType
 
 
 def test_cache_initialization():

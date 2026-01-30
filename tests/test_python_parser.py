@@ -3,8 +3,8 @@
 import tempfile
 from pathlib import Path
 
-from code_compass.parsers import PythonParser
-from code_compass.models import SymbolType
+from ai_code_compass.parsers import PythonParser
+from ai_code_compass.models import SymbolType
 
 
 def test_parse_simple_function():

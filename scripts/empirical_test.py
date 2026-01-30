@@ -3,10 +3,10 @@
 import time
 import tempfile
 from pathlib import Path
-from code_compass.parsers import PythonParser
-from code_compass.cache import CacheManager
-from code_compass.graph import DependencyBuilder
-from code_compass.formatter import RepoMapFormatter
+from ai_code_compass.parsers import PythonParser
+from ai_code_compass.cache import CacheManager
+from ai_code_compass.graph import DependencyBuilder
+from ai_code_compass.formatter import RepoMapFormatter
 
 
 def count_tokens_rough(text: str) -> int:

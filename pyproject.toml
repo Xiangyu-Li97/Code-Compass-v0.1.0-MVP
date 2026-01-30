@@ -1,26 +1,67 @@
 [project]
-name = "code-compass"
+name = "ai-code-compass"
 version = "0.1.0"
-description = "Fast code map generator for AI coding assistants"
-authors = [{name = "Xiangyu Li", email = "xiangyu@example.com"}]
+description = "Fast code map generator for AI coding assistants - Save 99%+ tokens"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 license = {text = "MIT"}
+authors = [
+    {name = "Xiangyu Li", email = "xiangyu.li@example.com"}
+]
+maintainers = [
+    {name = "Xiangyu Li", email = "xiangyu.li@example.com"}
+]
+keywords = [
+    "ai",
+    "llm",
+    "code-analysis",
+    "developer-tools",
+    "code-indexing",
+    "pagerank",
+    "ai-assistant",
+    "token-optimization",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 
 dependencies = [
-    "click>=8.0",
+    "click>=8.0.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.0",
-    "black>=23.0",
-    "mypy>=1.0",
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/Xiangyu-Li97/Code-Compass-v0.1.0-MVP"
+Repository = "https://github.com/Xiangyu-Li97/Code-Compass-v0.1.0-MVP"
+"Bug Tracker" = "https://github.com/Xiangyu-Li97/Code-Compass-v0.1.0-MVP/issues"
+Documentation = "https://github.com/Xiangyu-Li97/Code-Compass-v0.1.0-MVP#readme"
+
 [project.scripts]
-code-compass = "code_compass.cli:cli"
+ai-code-compass = "ai_code_compass.cli:cli"
 
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ai_code_compass", "ai_code_compass.parsers"]
+
+[tool.setuptools.package-data]
+ai_code_compass = ["py.typed"]

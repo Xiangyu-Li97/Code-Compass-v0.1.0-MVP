@@ -4,8 +4,9 @@
 
 Code Compass helps AI understand your codebase by generating concise, high-signal repository maps. It saves **99%+ tokens** while preserving the most important context for AI-powered coding tasks.
 
+[![PyPI version](https://badge.fury.io/py/ai-code-compass.svg)](https://badge.fury.io/py/ai-code-compass)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/pypi/pyversions/ai-code-compass.svg)](https://pypi.org/project/ai-code-compass/)
 [![Tests: 44 passing](https://img.shields.io/badge/tests-44%20passing-brightgreen.svg)]()
 
 ---
@@ -27,9 +28,17 @@ Code Compass solves this by:
 
 ## Installation
 
+### From PyPI (Recommended)
+
+```bash
+pip install ai-code-compass
+```
+
+### From Source
+
 ```bash
 # Clone the repository
-git clone https://github.com/Xiangyu-Li97/code-compass.git
+git clone https://github.com/Xiangyu-Li97/Code-Compass-v0.1.0-MVP.git
 cd code-compass
 
 # Install dependencies
@@ -42,16 +51,16 @@ pip install -e .
 
 ```bash
 # 1. Index your project
-code-compass index /path/to/your/project
+ai-code-compass index /path/to/your/project
 
 # 2. Generate a code map
-code-compass map
+ai-code-compass map
 
 # 3. Find a symbol
-code-compass find ClassName --fuzzy
+ai-code-compass find ClassName --fuzzy
 
 # 4. View statistics
-code-compass stats
+ai-code-compass stats
 ```
 
 ---
@@ -62,57 +71,57 @@ code-compass stats
 
 ```bash
 # Index current directory
-code-compass index .
+ai-code-compass index .
 
 # Index a specific directory
-code-compass index /path/to/project
+ai-code-compass index /path/to/project
 
 # Force re-index all files
-code-compass index . --force
+ai-code-compass index . --force
 ```
 
 ### Generate a Code Map
 
 ```bash
 # Generate text format (default)
-code-compass map
+ai-code-compass map
 
 # Generate JSON format
-code-compass map --format json
+ai-code-compass map --format json
 
 # Include top 30% of files
-code-compass map --top 0.3
+ai-code-compass map --top 0.3
 
 # Limit symbols per file
-code-compass map --max-symbols 20
+ai-code-compass map --max-symbols 20
 
 # Save to file
-code-compass map -o repo_map.txt
+ai-code-compass map -o repo_map.txt
 ```
 
 ### Find Symbols
 
 ```bash
 # Exact match
-code-compass find ClassName
+ai-code-compass find ClassName
 
 # Fuzzy search
-code-compass find Parser --fuzzy
+ai-code-compass find Parser --fuzzy
 
 # Show full signatures
-code-compass find process_data -s
+ai-code-compass find process_data -s
 ```
 
 ### View Statistics
 
 ```bash
-code-compass stats
+ai-code-compass stats
 ```
 
 ### Clear Cache
 
 ```bash
-code-compass clear
+ai-code-compass clear
 ```
 
 ---
@@ -237,25 +246,25 @@ code_compass/
 
 ### 1. AI-Powered Code Review
 ```bash
-code-compass map > context.txt
+ai-code-compass map > context.txt
 # Send context.txt to AI: "Review this codebase for security issues"
 ```
 
 ### 2. Onboarding New Developers
 ```bash
-code-compass map --top 0.1 > overview.txt
+ai-code-compass map --top 0.1 > overview.txt
 # New dev reads overview.txt to understand core modules
 ```
 
 ### 3. Refactoring Planning
 ```bash
-code-compass find OldClassName --fuzzy
+ai-code-compass find OldClassName --fuzzy
 # Find all occurrences before renaming
 ```
 
 ### 4. Documentation Generation
 ```bash
-code-compass map --format json | your-doc-generator
+ai-code-compass map --format json | your-doc-generator
 # Generate API docs from signatures
 ```
 

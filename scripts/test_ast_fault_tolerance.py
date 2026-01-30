@@ -2,7 +2,7 @@
 
 import tempfile
 from pathlib import Path
-from code_compass.parsers import PythonParser
+from ai_code_compass.parsers import PythonParser
 
 
 # Test cases with various syntax errors
