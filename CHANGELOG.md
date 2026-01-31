@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Permission Error**: Changed default cache directory from `project_root/.code-compass` to `~/.code-compass/<project_hash>` to avoid permission issues when running in system directories (e.g., `C:\Windows\System32`)
 - **Encoding Error**: Added support for multiple encodings (UTF-8, UTF-8-SIG, Latin-1, CP1252, GBK) and automatic BOM removal to handle Windows-created files correctly
+  - Fixed encoding issue in `python_parser.py` for file parsing
+  - Fixed encoding issue in `map_generator.py` for cache hash calculation
 - **PageRank Division by Zero**: Fixed crash when indexing single-file projects or projects with no import relationships
 
 ### Changed

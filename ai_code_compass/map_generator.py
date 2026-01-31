@@ -63,9 +63,21 @@ class MapGenerator:
             try:
                 # Check if file is cached and unchanged
                 if not force:
-                    # Get current file hash
-                    content = py_file.read_text(encoding='utf-8')
-                    current_hash = hashlib.sha256(content.encode()).hexdigest()
+                    # Get current file hash (try multiple encodings)
+                    content = None
+                    for encoding in ['utf-8', 'utf-8-sig', 'latin-1', 'cp1252', 'gbk']:
+                        try:
+                            content = py_file.read_text(encoding=encoding)
+                            break
+                        except (UnicodeDecodeError, LookupError):
+                            continue
+                    
+                    if content is None:
+                        # Skip this file if we can't read it
+                        stats['failed_files'] += 1
+                        continue
+                    
+                    current_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
                     
                     # Check cache
                     rel_path = str(py_file.relative_to(self.project_root))
