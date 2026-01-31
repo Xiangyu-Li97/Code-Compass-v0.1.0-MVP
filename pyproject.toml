@@ -1,6 +1,6 @@
 [project]
 name = "ai-code-compass"
-version = "0.1.1"
+version = "0.1.2"
 description = "Fast code map generator for AI coding assistants - Save 99%+ tokens"
 readme = "README.md"
 requires-python = ">=3.9"
