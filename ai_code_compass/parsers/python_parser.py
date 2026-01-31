@@ -23,9 +23,26 @@ class PythonParser:
             FileInfo object or None if parsing fails
         """
         try:
-            # Read file content
-            content = file_path.read_text(encoding='utf-8')
-            file_hash = hashlib.sha256(content.encode()).hexdigest()
+            # Read file content with multiple encoding attempts
+            content = None
+            encodings = ['utf-8', 'utf-8-sig', 'latin-1', 'cp1252', 'gbk']
+            
+            for encoding in encodings:
+                try:
+                    content = file_path.read_text(encoding=encoding)
+                    break
+                except (UnicodeDecodeError, LookupError):
+                    continue
+            
+            if content is None:
+                print(f"⚠️  Could not decode {file_path} with any supported encoding")
+                return None
+            
+            # Remove BOM if present
+            if content.startswith('\ufeff'):
+                content = content[1:]
+            
+            file_hash = hashlib.sha256(content.encode('utf-8')).hexdigest()
             
             # Parse AST
             try:

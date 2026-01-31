@@ -19,12 +19,17 @@ class MapGenerator:
         
         Args:
             project_root: Root directory of the project
-            cache_dir: Directory for cache storage (default: project_root/.code-compass)
+            cache_dir: Directory for cache storage (default: ~/.code-compass/<project_hash>)
         """
         self.project_root = Path(project_root).resolve()
         
         if cache_dir is None:
-            cache_dir = self.project_root / ".code-compass"
+            # Use user home directory to avoid permission issues
+            from pathlib import Path as PathLib
+            home_dir = PathLib.home()
+            # Create a unique cache dir based on project path hash
+            project_hash = hashlib.md5(str(self.project_root).encode()).hexdigest()[:8]
+            cache_dir = home_dir / ".code-compass" / project_hash
         
         self.cache_dir = Path(cache_dir)
         self.cache = CacheManager(self.cache_dir)

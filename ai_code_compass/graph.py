@@ -37,6 +37,21 @@ class DependencyGraph:
         """
         # Initialize: each node starts with score 1.0
         all_files = set(self.edges.keys()) | set(self.reverse_edges.keys())
+        
+        # Handle edge case: no files or single file with no imports
+        if not all_files:
+            return {}
+        
+        if len(all_files) == 1:
+            # Single file: return score 1.0
+            return {list(all_files)[0]: 1.0}
+        
+        # Check if there are any edges at all
+        has_edges = any(len(deps) > 0 for deps in self.edges.values())
+        if not has_edges:
+            # No imports: all files have equal importance
+            return {file: 1.0 for file in all_files}
+        
         scores = {file: 1.0 for file in all_files}
         
         # Iterate 10 times (usually converges quickly)
